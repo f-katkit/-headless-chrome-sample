@@ -27,6 +27,6 @@ input.send_keys('Python')
 input.send_keys(Keys.RETURN)
 
 # save screen shot
-driver.save_screenshot('images/result.png')
+driver.save_screenshot('/root/src/images/result.png')
 
 driver.quit()

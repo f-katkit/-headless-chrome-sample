@@ -1,18 +1,26 @@
 ### build
 
 ```
-docker build -t fkatkit/docker-crawl:1.0 .
+docker build -t fkatkit/headless-chrome-sample:latest .
 ```
 
 ### run
 #### linux
 
 ```
-docker run -d -v $(pwd):/root/images -it fkatkit/docker-crwal:1.0 /bin/bash
+# get screen shot
+docker run -v $(pwd):/root/src -it --rm fkatkit/headless-chrome-sample:latest python /root/sample_selene.py
+
+# run /bin/bash
+docker run -v $(pwd):/root/src -it --rm fkatkit/headless-chrome-sample:latest /bin/bash
 ```
 
 #### Windows
 
 ```
-docker run -d -v ${PWD}:/root/src --rm -it docker-crawl:1.0 /bin/bash
+# get screen shot
+docker run -v ${PWD}:/root/src --rm -it fkatkit/headless-chrome-sample:latest python /root/sample_selene.py
+
+# run /bin/bash
+docker run -v ${PWD}:/root/src --rm -it fkatkit/headless-chrome-sample:latest /bin/bash
 ```

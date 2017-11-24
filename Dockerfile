@@ -18,18 +18,6 @@ RUN set -x \
   && unzip chromedriver_linux64.zip \
   && mv chromedriver /usr/local/bin/
 
-# add sudo user
-# RUN groupadd -g 1000 developer && \
-#    useradd  -g      developer -G sudo -m -s /bin/bash ubuntu && \
-#    echo 'ubuntu:ubuntu' | chpasswd
-
-# RUN echo 'Defaults visiblepw'             >> /etc/sudoers
-# RUN echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-
-# USER ubuntu
-
-# WORKDIR /home/ubuntu
-
 WORKDIR /root
 
 RUN set -x \
